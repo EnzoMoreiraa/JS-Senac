@@ -1,0 +1,13 @@
+body{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
+
+div{
+    height: 500px;
+    width: 800px;
+    background-color: rgb(25, 23, 20);
+    border-radius: 15px;
+    border: 2px solid rgb(171, 171, 171);
+}

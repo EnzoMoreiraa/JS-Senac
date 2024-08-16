@@ -75,31 +75,39 @@ function game() {
 
   function cap1() {
     alert(
-      `Você é Perina Lokure, hoje completou 7 anos, mas ao invés de haver um bolo, você recebe uma notícia preocupante de que o conflito no Sudão está se intensificando. \n Suas estatísticas atuais são: \nVida = 100 \nInventário: Vazio \nFelicidade = 70 \nForca = 60 \nDinheiro = 50;`
+      `Perina Lokure, hoje você completa 7 anos. Em meio ao conflito que devasta o Sudão do Sul, não há bolo, nem presentes. Apenas o som distante, mas aterrorizante, de tiros e explosões. Sua casa, que sempre foi um refúgio seguro, agora parece um lugar ameaçador. Sua mãe, com o rosto tenso, lhe informa que vocês precisam fugir. 'O perigo está cada vez mais próximo', diz ela, enquanto suas mãos trêmulas tentam arrumar uma pequena mochila. Seu pai, porém, acredita que vocês devem ficar e proteger o que é de vocês.\nSuas estatísticas atuais são: \nVida = 100 \nInventário: Vazio \nFelicidade = 70 \nForca = 60 \nDinheiro = 50;`
     );
 
-    let escolha1 = Number(
+    let escolha1 = (
       prompt(
-        `Você tem duas opções: \n[1] Ficar com seu pai \n[2] Fugir com sua mãe`
+        `Você tem três opções: \n[1] Ficar com seu pai \n[2] Fugir com sua mãe`
       )
     );
 
-    if (escolha1 === 1) {
+    if (escolha1 == "1" || escolha1.toLowerCase().includes("ficar")) {
       vida -= vida;
 
       alert(
-        `${ends(vida)}\nInfelizmente você e seu pai são emboscados e acabam sendo alvejados por diversos tiros`
+        `${ends(vida)}\nDecidida a não deixar seu pai, você segura firme sua mão e juntos, tentam reforçar as defesas da casa. O som dos tiros se aproxima. Subitamente, a porta é arrombada, e antes que possam reagir, são emboscados por soldados. Em meio ao caos, você sente uma dor aguda e tudo escurece.`
       );
       
       checkpoint();
-    } else {
+    } else if (escolha1 == "2" || escolha1.toLowerCase().includes(`fugir`)) {
       alert(
-        `Você foge com sua mãe, tia e irmãos rumo a um futuro desconhecido. A viagem é longa e perigosa, mas vocês finalmente chegam ao Campo de Refugiados de Kakuma, no Quênia. Lá, você e sua família tentam reconstruir suas vidas. Embora as condições sejam difíceis, você encontra conforto nas pequenas coisas, como jogar futebol com outras crianças no campo. \nCoragem adicionada ao inventário`
+        `Você segura a mão de sua mãe, e juntos com sua tia e irmãos, correm pela noite escura. A viagem até o Quênia é longa e cheia de perigos, mas finalmente vocês chegam ao Campo de Refugiados de Kakuma. A viagem os deixou esgotados, mas há um pequeno alívio em saber que estão seguros... por enquanto.`
       );
-      inv.push(`Coragem`);
+
+      inv.push(`Resiliência`);
+      vida -= 10
+      felicidade -= 20
+      forca += 10
       checkP += 1;
 
       stats(vida, inv, felicidade, forca, dinheiro);
+    } else if (escolha1 == "3" || escolha1.toLowerCase().includes(`procurar`)) {
+      alert(
+        `Você procura abrigo com um vizinho de confiança, que ajuda a esconder sua família e providencia um caminho seguro para fugir mais tarde.`
+      )
     }
   }
   cap1();
