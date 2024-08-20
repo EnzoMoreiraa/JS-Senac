@@ -133,12 +133,13 @@ function cap1() {
 }
 
 function cap2() {
+  felicidade += 20; // Ganha 20 de felicidade por estar se reconectando ao mundo
   alert(
     `Capítulo 2: A Vida no Campo de Refugiados\nVocê agora vive no Campo de Refugiados de Kakuma, no Quênia. Já se passaram alguns anos desde que você fugiu do Sudão do Sul com sua mãe e irmãos. A vida em Kakuma é difícil, mas você tem encontrado maneiras de se adaptar. Com 14 anos, você começou a perceber que correr lhe dá uma sensação de liberdade, algo que você não sente em nenhum outro lugar. Certo dia, enquanto corria pelos arredores do campo, você conhece Janeth Jepkosgei, uma antiga campeã mundial de atletismo, que agora treina jovens talentos no campo. Ela vê potencial em você e oferece a chance de se juntar ao seu grupo de treinamento. Este é um momento decisivo em sua vida.`
   );
 
   let escolha2 = prompt(
-    `Você tem duas opções:\n[1] Dedicar-se inteiramente ao treinamento com Janeth (Custo: -10 de Vida, +10 de Força, +5 de Felicidade)\n[2] Dividir seu tempo entre escola e treinamento (Custo: -5 de Força, +10 de Felicidade, +5 de Dinheiro)`
+    `Você tem duas opções:\n[1] Dedicar-se inteiramente ao treinamento com Janeth \n[2] Dividir seu tempo entre escola e treinamento `
   );
 
   if (escolha2 == "1" || escolha2.toLowerCase().includes("dedicar")) {
@@ -147,7 +148,7 @@ function cap2() {
     );
     vida -= 10; // Perde 10 de vida pelo treinamento intenso
     forca += 10; // Ganha 10 de força pelo esforço
-    felicidade += 5; // Ganha 5 de felicidade por seguir sua paixão
+    felicidade += 10; // Ganha 10 de felicidade por seguir sua paixão
     checkP = 2;
 
     stats();
@@ -156,8 +157,7 @@ function cap2() {
       `Você decide encontrar um equilíbrio entre os estudos e o treinamento. Embora seu progresso na corrida seja mais lento, você se sente mais feliz ao manter a conexão com seus estudos e com as pessoas ao seu redor. Você consegue ganhar algum dinheiro fazendo pequenos trabalhos dentro do campo, ajudando a sustentar sua família e a si mesma. Janeth respeita sua escolha e lhe dá treinos que permitem que você mantenha o equilíbrio entre a corrida e a escola. Embora você não esteja evoluindo tão rapidamente quanto gostaria, o treinamento ainda lhe traz felicidade e esperança para um futuro melhor.`
     );
     forca -= 5; // Perde 5 de força devido ao menor foco no esporte
-    felicidade += 10; // Ganha 10 de felicidade por ter um equilíbrio de vida
-    dinheiro += 5; // Ganha 5 de dinheiro por pequenos trabalhos no campo
+    dinheiro += 15; // Ganha 15 de dinheiro por pequenos trabalhos no campo
     checkP = 2;
 
     stats();
@@ -170,14 +170,14 @@ function cap3() {
   );
 
   let escolha3 = prompt(
-    `Você tem duas opções:\n[1] Competir com tudo que tem, colocando toda sua energia na corrida (Custo: -20 de Vida, +20 de Força)\n[2] Competir com cautela, preservando seu corpo e evitando lesões (Custo: -10 de Força, +10 de Felicidade)`
+    `Você tem duas opções:\n[1] Competir com tudo que tem, colocando toda sua energia na corrida\n[2] Competir com cautela, preservando seu corpo e evitando lesões`
   );
 
   if (escolha3 == "1" || escolha3.toLowerCase().includes("tudo")) {
     alert(
       `Você decide dar tudo de si na competição. No dia da corrida, seu coração bate mais rápido do que nunca. Quando o tiro de largada soa, você sente uma explosão de adrenalina e corre como nunca antes. Cada passada é um esforço máximo. O calor do asfalto, a torcida e o som das outras competidoras se misturam em um borrão, mas você continua focada na linha de chegada. A dor nos músculos é intensa, seu corpo clama por descanso, mas você não desiste. Ao cruzar a linha de chegada, você desaba no chão, exausta, mas o sentimento de vitória é inigualável. Sua força cresceu imensamente, mas o esforço cobrou um preço em sua saúde. Você é reconhecida como uma das estrelas em ascensão no atletismo, mas precisará de tempo para se recuperar.`
     );
-    vida -= 20; // Perde 20 de vida por esforço físico intenso
+    vida -= 5; // Perde 20 de vida por esforço físico intenso
     forca += 20; // Ganha 20 de força por dar o máximo
     checkP = 3;
 
@@ -187,7 +187,8 @@ function cap3() {
       `Você decide correr com cautela, focando em evitar lesões e garantir que possa continuar competindo no futuro. Durante a corrida, você mantém um ritmo constante e seguro, sem forçar demais o seu corpo. Ao cruzar a linha de chegada, você não está entre as primeiras, mas também não está entre as últimas. Embora você não tenha se destacado tanto quanto poderia, você sai da competição ilesa e com uma sensação de paz. A corrida lhe trouxe alegria, e você sabe que essa foi a escolha certa para garantir que possa continuar a perseguir seu sonho sem arriscar sua saúde.`
     );
     forca -= 10; // Perde 10 de força por não se esforçar ao máximo
-    felicidade += 10; // Ganha 10 de felicidade por se preservar
+    felicidade += 5; // Ganha 10 de felicidade por se preservar
+    vida += 10; // Ganha 10 de vida por se preservar
     checkP = 3;
     inv.push("Cautela");
 
@@ -201,7 +202,7 @@ function cap4() {
   );
 
   let escolha4 = prompt(
-    `Você tem duas opções:\n[1] Aceitar o convite e partir para a capital (Custo: -10 de Felicidade, +10 de Dinheiro, +15 de Força)\n[2] Recusar o convite e continuar treinando com Janeth em Kakuma (Custo: +10 de Felicidade, -5 de Força)`
+    `Você tem duas opções:\n[1] Aceitar o convite e partir para a capital\n[2] Recusar o convite e continuar treinando com Janeth em Kakuma`
   );
 
   if (escolha4 == "1" || escolha4.toLowerCase().includes("aceitar")) {
@@ -234,15 +235,15 @@ function cap5() {
   );
 
   let escolha5 = prompt(
-    `Você tem duas opções:\n[1] Competir com toda a sua energia e dedicação (Custo: -20 de Vida, +30 de Força)\n[2] Correr com cautela e estratégia, minimizando o risco de lesões (Custo: -10 de Força, +10 de Felicidade)`
+    `Você tem duas opções:\n[1] Competir com toda a sua energia e dedicação \n[2] Correr com cautela e estratégia, minimizando o risco de lesões`
   );
 
   if (escolha5 == "1" || escolha5.toLowerCase().includes("competir")) {
     alert(
       `Você decide competir com toda a sua energia e dedicação. A corrida é uma maratona de adrenalina e você dá o seu máximo a cada etapa. A competição é feroz, e o calor da multidão aumenta a pressão. Cada músculo em seu corpo grita de dor, mas você continua firme, superando seus limites. Ao final da corrida, você se sente exausta, mas extremamente orgulhosa de seu desempenho. O esforço intenso e o treinamento pesado que você passou se refletem em sua performance impressionante. Embora a experiência tenha sido desgastante, o aumento em sua força física é significativo e um reconhecimento de sua dedicação e esforço.`
     );
-    vida -= 20; // Perda de vida devido ao desgaste extremo
-    forca += 30; // Grande aumento de força devido à dedicação total
+    vida -= 5; // Perda 5 de vida devido ao desgaste extremo
+    forca += 10; // Grande aumento de 10 de força devido à dedicação total
     checkP = 5;
 
     inv.push("Experiência Competitiva"); // Adiciona "Experiência Competitiva" ao inventário
@@ -267,7 +268,7 @@ function cap6() {
   );
 
   let escolha6 = prompt(
-    `Você tem duas opções:\n[1] Aceitar o patrocínio (Custo: -10 de Felicidade, +20 de Dinheiro, +15 de Força)\n[2] Recusar o patrocínio e continuar com o suporte atual (Custo: +10 de Felicidade, -5 de Dinheiro)`
+    `Você tem duas opções:\n[1] Aceitar o patrocínio \n[2] Recusar o patrocínio e continuar com o suporte atual (Custo: +10 de Felicidade, -5 de Dinheiro)`
   );
 
   if (escolha6 == "1" || escolha6.toLowerCase().includes("aceitar")) {
@@ -277,6 +278,7 @@ function cap6() {
 
     dinheiro += 20; // Aumento no dinheiro devido ao patrocínio
     forca += 15; // Aumento na força devido ao melhor treinamento e equipamentos
+    felicidade += 10 // Aumento de 10 na felcidade por poder ajudar sua família
     checkP = 6;
 
     inv.push("Patrocínio Esportivo"); // Adiciona "Patrocínio Esportivo" ao inventário
@@ -285,9 +287,9 @@ function cap6() {
     alert(
       `Você decide recusar o patrocínio e continuar com o suporte atual. Embora essa decisão mantenha o equilíbrio em sua vida pessoal e permita que você mantenha um nível de felicidade mais alto, também limita seus recursos e oportunidades. O suporte atual é suficiente para continuar sua carreira, mas você não terá acesso às vantagens adicionais que o patrocínio teria proporcionado. Sua decisão resulta em uma maior satisfação pessoal, mas com um impacto negativo nas finanças e um pequeno sacrifício na força física.`
     );
-    felicidade += 10; // Aumento na felicidade devido à menor pressão
-    dinheiro -= 5; // Redução no dinheiro por não aceitar o patrocínio
-    forca -= 5; // Pequena redução na força devido à falta de equipamentos avançados
+    felicidade += 30; // Grande aumento de 30 na felicidade devido à menor pressão
+    dinheiro -= 15; // Redução de 15 no dinheiro por não aceitar o patrocínio
+    forca -= 5; // Redução de 5 na força devido à falta de equipamentos avançados
     checkP = 6;
 
     inv.push("Autonomia Pessoal"); // Adiciona "Autonomia Pessoal" ao inventário
@@ -301,15 +303,16 @@ function cap7() {
   );
 
   let escolha7 = prompt(
-    `Você tem duas opções:\n[1] Aceitar a convocação e se preparar para as Olimpíadas (Custo: -15 de Felicidade, +25 de Força, -10 de Dinheiro)\n[2] Recusar a convocação e continuar com seu treinamento local (Custo: +15 de Felicidade, -10 de Força)`
+    `Você tem duas opções:\n[1] Aceitar a convocação e se preparar para as Olimpíadas \n[2] Recusar a convocação e continuar com seu treinamento local`
   );
 
   if (escolha7 == "1" || escolha7.toLowerCase().includes("aceitar")) {
     alert(
       `Você decide aceitar a convocação para o time de refugiados nas Olimpíadas. A preparação para o evento é intensa e exige um grande sacrifício pessoal. Embora a felicidade seja afetada devido ao estresse e à separação de sua vida cotidiana, a força física é aprimorada pelo treinamento especializado. O custo financeiro também aumenta devido às despesas relacionadas ao evento, mas a experiência e o reconhecimento que você ganha são imensos. Participar das Olimpíadas é um sonho realizado e uma chance de brilhar no cenário mundial.`
     );
-    forca += 25; // Grande aumento na força devido ao treinamento olímpico
+    forca += 25; // Grande de 25 aumento na força devido ao treinamento olímpico
     dinheiro -= 10; // Redução no dinheiro devido às despesas com a competição
+    felicidade += 25 // Grande aumento de 25 na felicidade pelo seu sonho estar se tornando realidade
     checkP = 7;
 
     inv.push("Convocação Olímpica"); // Adiciona "Convocação Olímpica" ao inventário
@@ -318,15 +321,8 @@ function cap7() {
     alert(
       `Você decide recusar a convocação para o time de refugiados nas Olimpíadas e continuar com seu treinamento local. Embora essa decisão permita que você mantenha um nível mais alto de felicidade e estabilidade pessoal, você perde a chance de competir no maior palco esportivo do mundo. A força física e a visibilidade são impactadas, mas você mantém sua vida relativamente equilibrada e continua a trabalhar em seu desenvolvimento pessoal e esportivo em um ambiente familiar.`
     );
-    felicidade += 15; // Aumento na felicidade devido à manutenção da vida cotidiana
-    forca -= 10; // Pequena redução na força devido à falta de treinamento especializado
-    checkP = 7;
-
-    inv.push("Estabilidade Pessoal"); // Adiciona "Estabilidade Pessoal" ao inventário
-    stats();
-
     alert(
-      `Pela recusa do convite, você acaba perdendo a chance de ir para as olímpiadas`
+      ` Mas infelizmente pela recusa do convite, você acaba perdendo a chance de ir para as olímpiadas`
     );
     vida -= vida;
     checkpoint();
@@ -339,14 +335,14 @@ function cap8() {
   );
 
   let escolha8 = prompt(
-    `Você tem duas opções:\n[1] Persistir com o treinamento intenso, enfrentando os desafios e as dificuldades (Custo: -20 de Felicidade, +30 de Força)\n[2] Reduzir a intensidade do treinamento para manter um equilíbrio melhor entre o esforço e o bem-estar (Custo: +10 de Felicidade, -10 de Força)`
+    `Você tem duas opções:\n[1] Persistir com o treinamento intenso, enfrentando os desafios e as dificuldades \n[2] Reduzir a intensidade do treinamento para manter um equilíbrio melhor entre o esforço e o bem-estar `
   );
 
   if (escolha8 == "1" || escolha8.toLowerCase().includes("persistir")) {
     alert(
       `Você decide seguir firme no treinamento intenso, apesar das dificuldades. Os treinos são desgastantes, mas sua determinação em alcançar o melhor desempenho possível é inabalável. As longas horas de prática e o esforço extremo resultam em um grande aumento na sua força física e em suas habilidades atléticas. No entanto, o custo emocional é alto, e sua felicidade diminui devido ao estresse e à pressão constante. Você está no caminho certo para se preparar para os Jogos Olímpicos, mas o preço a pagar é significativo.`
     );
-    felicidade -= 20; // Redução de 20 na felicidade devido ao estresse e à pressão
+    felicidade -= 10; // Redução de 10 na felicidade devido ao estresse e à pressão
     forca += 30; // Grande aumento de 30 na força devido ao treinamento intenso
     checkP = 8;
 
@@ -371,7 +367,7 @@ function cap9() {
   );
 
   let escolha9 = prompt(
-    `Você tem duas opções:\n[1] Dar tudo de si na competição, tentando alcançar a melhor performance possível (Custo: -30 de Felicidade, +20 de Força, +10 de Dinheiro)\n[2] Competir com um ritmo controlado, focando mais no equilíbrio entre esforço e bem-estar (Custo: +20 de Felicidade, -10 de Força)`
+    `Você tem duas opções:\n[1] Dar tudo de si na competição, tentando alcançar a melhor performance possível \n[2] Competir com um ritmo controlado, focando mais no equilíbrio entre esforço e bem-estar`
   );
 
   if (escolha9 == "1" || escolha9.toLowerCase().includes("dar tudo")) {
@@ -379,12 +375,12 @@ function cap9() {
       `Você decide dar tudo de si na competição. A corrida é intensa e extenuante, mas você mantém o foco e a determinação. O som das multidões e a pressão em seus ombros são imensos, e você sente o peso de carregar a história e o peso do mundo nas suas costas.`
     );
 
-    felicidade -= 30; // Grande redução na felicidade devido ao estresse e pressão
-    forca += 20; // Aumento na força devido ao esforço extremo
-    dinheiro += 10; // Ganho de dinheiro pela conquista na competição
+    forca += 20; // Aumento de 20 na força devido ao esforço extremo
+    vida -= 10 // Diminuição de 10 pelo gasto físico
+    dinheiro += 10; // Ganho de 10 de dinheiro pela conquista na competição
 
     // Condições dos finais
-    if (inv.includes("Determinação") && forca > 100 && vida > 20) {
+    if (inv.includes("Determinação") && forca > 150 && vida > 50 && felicidade > 30) {
       alert(
         `Com sua força impressionante e a determinação que você carregou, você conquista a medalha de ouro! Sua vitória é a culminação de todos os sacrifícios e esforços ao longo de sua jornada. Carregando a história e o peso do mundo nas costas, você se sente nas nuvens, celebrando a conquista máxima no atletismo.`
       );
@@ -415,7 +411,13 @@ function cap9() {
     forca -= 10; // Pequena redução na força devido ao ritmo controlado
 
     // Condições dos finais
-    if (forca > 100 && vida > 20) {
+
+      if (inv.includes("Determinação") && forca > 150 && vida > 50 && felicidade > 30) {
+      alert(
+        `Com sua força impressionante e a determinação que você carregou, você conquista a medalha de ouro! Sua vitória é a culminação de todos os sacrifícios e esforços ao longo de sua jornada. Carregando a história e o peso do mundo nas costas, você se sente nas nuvens, celebrando a conquista máxima no atletismo.`
+      );
+      inv.push("Medalha de Ouro");
+     } else if (forca > 100 && vida > 20) {
       alert(
         `Mesmo com o ritmo controlado, você consegue conquistar a medalha de prata. Sua abordagem cuidadosa garante uma performance sólida e a sensação de uma conquista equilibrada.`
       );
