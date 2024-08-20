@@ -1,3 +1,4 @@
+// Status iniciais
 let vida = 100;
 let inv = [];
 let felicidade = 70;
@@ -5,8 +6,8 @@ let forca = 60;
 let dinheiro = 50;
 let checkP = 0;
 
+// Função para resetar os status
 function resetStatus() {
-  // Função de resetar os status
   vida = 100;
   inv = [];
   felicidade = 70;
@@ -14,139 +15,78 @@ function resetStatus() {
   dinheiro = 50;
 }
 
+// Função para exibir os status atuais
 function stats() {
-  alert(
-    `Seus status atuais são:\nVida: ${vida}\nFelicidade: ${felicidade}\nForça: ${forca}\nDinheiro: ${dinheiro}\nInventário: ${inv.join(
-      ", "
-    )}`
-  );
+  alert(`
+    Seus status atuais são:
+    Vida: ${vida}
+    Felicidade: ${felicidade}
+    Força: ${forca}
+    Dinheiro: ${dinheiro}
+    Inventário: ${inv.join(", ")}
+  `);
 }
 
+// Função que executa os checkpoints
 function executeCheckpoints(checkpointNum) {
-  switch (checkpointNum) {
-    case 1:
-      cap1();
-      break;
-    case 2:
-      cap1();
-      cap2();
-      break;
-    case 3:
-      cap1();
-      cap2();
-      cap3();
-      break;
-    case 4:
-      cap1();
-      cap2();
-      cap3();
-      cap4();
-      break;
-    case 5:
-      cap1();
-      cap2();
-      cap3();
-      cap4();
-      cap5();
-      break;
-    case 6:
-      cap1();
-      cap2();
-      cap3();
-      cap4();
-      cap5();
-      cap6();
-      break;
-    case 7:
-      cap1();
-      cap2();
-      cap3();
-      cap4();
-      cap5();
-      cap6();
-      cap7();
-      break;
-    case 8:
-      cap1();
-      cap2();
-      cap3();
-      cap4();
-      cap5();
-      cap6();
-      cap7();
-      cap8();
-      break;
-    case 9:
-      cap1();
-      cap2();
-      cap3();
-      cap4();
-      cap5();
-      cap6();
-      cap7();
-      cap8();
-      cap9();
-      break;
-    case 10:
-      cap1();
-      cap2();
-      cap3();
-      cap4();
-      cap5();
-      cap6();
-      cap7();
-      cap8();
-      cap9();
-      break;
-    default:
-      alert("Checkpoint inválido.");
-  }
+  checkpoints(checkpointNum);
 }
 
+// Função que chama os checkpoints
 function checkpoints(checkpointNum) {
   for (let i = 1; i <= checkpointNum; i++) {
-    if (i === 1) cap1();
-    else if (i === 2) cap2();
-    else if (i === 3) cap3();
-    else if (i === 4) cap4();
-    else if (i === 5) cap5();
-    else if (i === 6) cap6();
-    else if (i === 7) cap7();
-    else if (i === 8) cap8();
-    else if (i === 9) cap9();
+    switch (i) {
+      case 1:
+        cap1();
+        break;
+      case 2:
+        cap2();
+        break;
+      case 3:
+        cap3();
+        break;
+      case 4:
+        cap4();
+        break;
+      case 5:
+        cap5();
+        break;
+      case 6:
+        cap6();
+        break;
+      case 7:
+        cap7();
+        break;
+      case 8:
+        cap8();
+        break;
+      case 9:
+        cap9();
+        break;
+      default:
+        console.log("Checkpoint inválido.");
+        break;
+    }
   }
 }
 
+// Função para verificar e gerenciar checkpoints
 function checkpoint() {
-  // Função que o usuário seleciona para qual checkpoint irá voltar
-
-  if (vida == 0) {
-    let check1 = Number(
-      prompt(`Deseja retornar a algum checkpoint? \n[1] Sim \n[2] Não`)
-    );
-    if (check1 == "2") {
-      alert("Foi bom enquanto durou");
-      return;
-    }
+  if (vida === 0) {
+    resetStatus();
+    game();
   } else {
-    let check = prompt(
-      `Deseja retornar a algum checkpoint? \n[1] Sim \n[2] Não`
-    );
+    let check = prompt(`Deseja retornar a algum checkpoint? \n[1] Sim \n[2] Não`);
 
-    if (check == "1" || check.toLowerCase.includes(`s`)) {
-      let escolha = prompt(
-        `Deseja voltar a qual checkpoint? \n[1] Último checkpoint \n[2] Outro`
-      );
+    if (check === "1" || check.toLowerCase().includes("s")) {
+      let escolha = prompt(`Deseja voltar a qual checkpoint? \n[1] Último checkpoint \n[2] Outro`);
 
-      if (escolha == "1" || escolha.toLowerCase().includes("último")) {
+      if (escolha === "1" || escolha.toLowerCase().includes("último")) {
         executeCheckpoints(checkP);
-      } else if (escolha == "2" || escolha.toLowerCase().includes("outro")) {
-        let outroCheckpoint = prompt(
-          `Digite o número do checkpoint desejado: [1] [2] [3] etc...`
-        );
-
-        // Verifica se o número do checkpoint é válido
+      } else if (escolha === "2" || escolha.toLowerCase().includes("outro")) {
+        let outroCheckpoint = prompt(`Digite o número do checkpoint desejado: [1] [2] [3] etc...`);
         let numCheckpoint = Number(outroCheckpoint);
+
         if (numCheckpoint >= 1 && numCheckpoint <= 10) {
           checkP = numCheckpoint;
           resetStatus();
