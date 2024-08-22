@@ -124,7 +124,7 @@ function checkpoint() {
     let check1 = Number(
       prompt(`Deseja retornar a algum checkpoint? \n[1] Sim \n[2] Não`)
     );
-    if (check1 == "2") {
+    if (check1 == 2) {
       alert("Foi bom enquanto durou");
       return;
     }
@@ -133,14 +133,14 @@ function checkpoint() {
       `Deseja retornar a algum checkpoint? \n[1] Sim \n[2] Não`
     );
 
-    if (check == "1" || check.toLowerCase.includes(`s`)) {
+    if (check == "1" || check.toLowerCase() === "s") {
       let escolha = prompt(
         `Deseja voltar a qual checkpoint? \n[1] Último checkpoint \n[2] Outro`
       );
 
-      if (escolha == "1" || escolha.toLowerCase().includes("último")) {
+      if (escolha == "1" || escolha.toLowerCase() === "último") {
         executeCheckpoints(checkP);
-      } else if (escolha == "2" || escolha.toLowerCase().includes("outro")) {
+      } else if (escolha == "2" || escolha.toLowerCase() === "outro") {
         let outroCheckpoint = prompt(
           `Digite o número do checkpoint desejado: [1] [2] [3] etc...`
         );
